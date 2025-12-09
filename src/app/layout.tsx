@@ -3,7 +3,7 @@ import { Albert_Sans, Inter } from "next/font/google";
 import "./globals.css";
 import { NavBar } from "../components/NavBar";
 import { Footer } from "../components/Footer";
-
+import { Analytics } from "@vercel/analytics/next";
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
@@ -80,6 +80,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${albertSans.variable} antialiased bg-background-soft overflow-x-hidden`}
       >
+        <Analytics />
         <NavBar />
         {children}
         <Footer />
