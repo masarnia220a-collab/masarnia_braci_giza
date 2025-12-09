@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 export const AboutUs = () => {
   return (
     <motion.div
+      id="onas"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}

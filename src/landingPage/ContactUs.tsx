@@ -1,9 +1,17 @@
 import { Mail, Phone, Pin } from "lucide-react";
+import Image from "next/image";
 import React from "react";
 
 export const ContactUs = () => {
   return (
-    <div className="flex flex-col gap-16">
+    <div id="kontakt" className="flex flex-col gap-16 relative">
+      <Image
+        src={"/szynka.png"}
+        height={173}
+        width={237}
+        alt="Zdjęcie przedstawiające szynke"
+        className="absolute -top-12 right-0"
+      />
       <div className="flex flex-col gap-2 text-center max-w-[60%] p-6 max-[650px]:max-w-full self-center">
         <p className="text-brand-red uppercase font-inter tracking-wide font-bold subheading-md subheading-sm">
           Masz pytanie?
@@ -12,9 +20,10 @@ export const ContactUs = () => {
           Napisz do nas
         </h2>
         <p className="paragraph paragraph-sm paragraph-md">
-          Niezależnie od tego czy chcesz się skontaktować bo ci się nudzi czy
-          masz downa i chcesz cośt porobić daj znaća jakoś to ogarniemy tego
-          typu
+          Chcesz zapytać o skład naszych wyrobów, zamówić większą ilość na
+          wesele, czy po prostu dowiedzieć się, co dziś wędzimy? Napisz do nas
+          lub zadzwoń – chętnie doradzimy i podzielimy się naszą pasją do
+          tradycyjnych smaków.
         </p>
       </div>
       <div className="grid max-[750px]:grid-cols-1 grid-cols-[1fr_2fr] bg-background-softer p-5 rounded-2xl  max-[450px]:p-2">
@@ -24,7 +33,8 @@ export const ContactUs = () => {
               Dane Kontaktowe
             </h4>
             <p className="paragraph !text-white/70 paragraph-sm paragraph-md">
-              Zadaj pytanie dowiedz się czegoś wiecej a napewno coś wymyślkimy{" "}
+              Cenimy sobie bezpośredni kontakt. Zadzwoń, napisz lub odwiedź nas
+              osobiście w Żarówce. Czekamy na Ciebie!
             </p>
           </div>
           <div className="flex flex-col gap-12">
@@ -89,6 +99,21 @@ export const ContactUs = () => {
               placeholder="Twoja wiadomość..."
             />
           </div>
+          <label className="flex items-center gap-2 text-15 text-black cursor-pointer select-none">
+            <input
+              type="checkbox"
+              required
+              name="privacy"
+              className="
+      appearance-none h-4 w-4 rounded border border-brand-red cursor-pointer
+      transition-all duration-200 peer
+      hover:ring-2 hover:ring-brand-red/30
+      peer-checked:bg-brand-red peer-checked:border-brand-red
+    "
+            />
+            <span className="relative peer-checked:animate-ping peer-checked:text-brand-red"></span>
+            Akceptuję politykę prywatności.
+          </label>
 
           {/* Divider */}
 

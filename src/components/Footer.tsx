@@ -37,7 +37,8 @@ export const Footer = () => {
           {/* Icons */}
           <div className="flex gap-3">
             <a
-              href="#"
+              href="https://www.facebook.com/profile.php?id=61584467833889"
+              target="_blank"
               className="bg-brand-red rounded-full p-2 hover:bg-brand-red-dark transition"
             >
               <Facebook size={18} color="#fff" />

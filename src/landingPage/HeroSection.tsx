@@ -83,11 +83,11 @@ export const HeroSection = () => {
           transition={{ delay: 0.65, duration: 0.6 }}
           className="flex flex-row gap-8 max-[840px]:justify-center max-[350]:flex-col max-[350]:w-fit max-[350]:text-center"
         >
-          <motion.div whileHover={{ scale: 1.05 }}>
+          <motion.div className="z-100" whileHover={{ scale: 1.05 }}>
             <Button label="Zobacz oferte" style="full" href="/produkty" />
           </motion.div>
 
-          <motion.div whileHover={{ scale: 1.05 }}>
+          <motion.div className="z-100" whileHover={{ scale: 1.05 }}>
             <Button
               label="Gdzie nas znajdziesz"
               style="outline"

@@ -1,10 +1,18 @@
 "use client";
 import { Star } from "lucide-react";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 const ReviewCard = () => {
+  const [reviews, setReviews] = useState([]);
+
+  useEffect(() => {
+    fetch("/api/reviews")
+      .then((res) => res.json())
+      .then((data) => setReviews(data.reviews || []));
+    console.log(reviews);
+  }, []);
   return (
     <motion.div
       initial={{ opacity: 0, y: 25 }}
@@ -53,8 +61,15 @@ export const Reviews = () => {
         hidden: { opacity: 0, y: 40 },
         visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
       }}
-      className="flex flex-col gap-12"
+      className="flex flex-col gap-12 relative"
     >
+      <Image
+        src={"/pento_kielbasy.png"}
+        width={266}
+        height={183}
+        alt="decoratuve"
+        className="absolute -top-40"
+      />
       {/* Title Animation */}
       <motion.h2
         initial={{ opacity: 0, y: 20 }}

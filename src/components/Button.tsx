@@ -14,7 +14,7 @@ export const Button = ({ label, href, style, classNames }: ButtonProps) => {
 
   return (
     <Link
-      className={`pt-1.5 pb-1.5 pl-5 pr-5 rounded-xl  z-50 paragraph-sm paragraph-md  border- ${styles} ${
+      className={`pt-1.5 pb-1.5 pl-5 pr-5 rounded-xl  z-[99999] paragraph-sm paragraph-md  border- ${styles} ${
         classNames && classNames
       }`}
       href={href}

@@ -3,6 +3,12 @@
   max-width: 1200px;
   margin: 0 auto;
 }
+html {
+  scroll-behavior: smooth;
+}
+:root {
+  scroll-padding-top: 100px; /* height of your navbar */
+}
 @theme {
   /* --- COLORS --- */
 
