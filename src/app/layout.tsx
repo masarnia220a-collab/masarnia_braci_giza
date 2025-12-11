@@ -15,7 +15,7 @@ const albertSans = Albert_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://masarnia-braci-giza.pl"), // <-- your site url
+  metadataBase: new URL("https://masarniabracigiza.pl"), // <-- your site url
   title: {
     default: "Masarnia braci Giża • Tradycja i prawdziwy smak",
     template: "%s | Masarnia braci Giża",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
 
   openGraph: {
     type: "website",
-    url: "https://masarnia-braci-giza.pl",
+    url: "https://masarniabracigiza.pl",
     title: "Masarnia braci Giża • Tradycja i prawdziwy smak",
     description:
       "Od 1990 roku tworzymy wyroby według rodzinnych receptur — lokalne składniki, prawdziwe wędzenie, smak pokoleń.",
