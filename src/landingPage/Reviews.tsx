@@ -5,14 +5,14 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 const ReviewCard = () => {
-  const [reviews, setReviews] = useState([]);
+  // const [reviews, setReviews] = useState([]);
 
-  useEffect(() => {
-    fetch("/api/reviews")
-      .then((res) => res.json())
-      .then((data) => setReviews(data.reviews || []));
-    console.log(reviews);
-  }, []);
+  // useEffect(() => {
+  //   fetch("/api/reviews")
+  //     .then((res) => res.json())
+  //     .then((data) => setReviews(data.reviews || []));
+  //   console.log(reviews);
+  // }, []);
   return (
     <motion.div
       initial={{ opacity: 0, y: 25 }}

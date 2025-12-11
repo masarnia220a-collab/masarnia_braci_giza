@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://masarniabracigiza.pl
+
+# Sitemaps
+Sitemap: https://masarniabracigiza.pl/sitemap.xml
