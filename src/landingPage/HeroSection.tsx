@@ -81,7 +81,7 @@ export const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.65, duration: 0.6 }}
-          className="flex flex-row gap-8 max-[840px]:justify-center max-[350]:flex-col max-[350]:w-fit max-[350]:text-center"
+          className="flex flex-row max-[840px]:self-center gap-8 max-[840px]:justify-center max-[350]:flex-col max-[350]:w-fit max-[350]:text-center"
         >
           <motion.div className="z-100" whileHover={{ scale: 1.05 }}>
             <Button label="Zobacz oferte" style="full" href="/produkty" />

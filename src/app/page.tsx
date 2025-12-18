@@ -1,7 +1,9 @@
 import { TopProducts } from "../components/TopProducts";
 import { AboutUs } from "../landingPage/AboutUs";
 import { ContactUs } from "../landingPage/ContactUs";
+import Gallery from "../landingPage/Gallery";
 import { HeroSection } from "../landingPage/HeroSection";
+import { HowWeWork } from "../landingPage/HowWeWork";
 import { Reviews } from "../landingPage/Reviews";
 import { SocialProve } from "../landingPage/SocialProve";
 import { WhyUs } from "../landingPage/WhyUs";
@@ -12,8 +14,10 @@ export default function Home() {
       <HeroSection />
       <SocialProve />
       <AboutUs />
+      <HowWeWork />
       <TopProducts />
       <WhyUs />
+      <Gallery />
       {/* <Reviews /> */}
       <ContactUs />
     </main>

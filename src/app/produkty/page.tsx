@@ -16,7 +16,7 @@ const productsData = [
   { id: 7, nazwa: "Kiełbasa śląska grillowa", cena: 20.9 },
   { id: 8, nazwa: "Kiełbasa kminkowa", cena: 28.3 },
   { id: 9, nazwa: "Kiełbasa krakowska", cena: 30.3 },
-  { id: 10, nazwa: "Kiełbasa miejska", cena: 36.3 },
+  { id: 10, nazwa: "Kiełbasa wiejska", cena: 36.3 },
   { id: 11, nazwa: "Kiełbasa zwyczajna", cena: 22.8 },
   { id: 12, nazwa: "Kiełbasa żywiecka", cena: 28.9 },
   { id: 13, nazwa: "Kabanosy", cena: 40.1 },

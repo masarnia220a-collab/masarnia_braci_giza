@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
 
@@ -19,10 +19,20 @@ export const NavBar = () => {
   const pathname = usePathname();
 
   const toggleMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
 
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isMobileMenuOpen]);
   return (
     <>
-      <nav className="flex flex-row justify-between md:justify-start gap-4 md:gap-20 p-4 px-6 md:px-20 items-center container mx-auto relative z-50">
+      <nav className="flex flex-row justify-between min-[850px]:justify-start gap-4 md:gap-20 p-4 px-6 md:px-20 items-center container mx-auto relative ">
         {/* LOGO */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
@@ -30,11 +40,11 @@ export const NavBar = () => {
           transition={{ duration: 0.5 }}
           className="z-50"
         >
-          <Image src={"/masarniaLogo.png"} height={55} width={50} alt="Logo" />
+          <Image src={"/masarniaLogo.svg"} height={75} width={75} alt="Logo" />
         </motion.div>
 
         {/* DESKTOP MENU */}
-        <ul className="hidden md:flex flex-row gap-12 font-inter font-semibold uppercase text-15">
+        <ul className="hidden min-[850px]:flex flex-row gap-12 font-inter font-semibold uppercase text-15">
           {navLinks.map((link, index) => {
             const isAnchor = link.href.startsWith("/#");
             const isActive = !isAnchor && pathname === link.href;
@@ -82,10 +92,10 @@ export const NavBar = () => {
         </ul>
 
         {/* MOBILE BURGER */}
-        <div className="md:hidden z-50">
+        <div className="min-[850px]:hidden z-[999]">
           <button
             onClick={toggleMenu}
-            className="flex flex-col justify-center items-center w-10 h-10 gap-1.5 cursor-pointer"
+            className="flex flex-col justify-center items-center w-10 h-10 gap-1.5 cursor-pointer "
           >
             <motion.span
               animate={
@@ -115,7 +125,7 @@ export const NavBar = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: "-100%" }}
             transition={{ duration: 0.4, ease: "easeInOut" }}
-            className="fixed inset-0 bg-background-soft z-40 flex flex-col items-center justify-center md:hidden"
+            className="fixed inset-0 bg-background-soft z-40 flex flex-col items-center justify-center min-[850px]:hidden z-[200]"
           >
             <ul className="flex flex-col gap-8 font-inter font-bold uppercase text-2xl text-center">
               {navLinks.map((link, index) => {

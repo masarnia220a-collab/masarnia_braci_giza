@@ -4,6 +4,7 @@ import "./globals.css";
 import { NavBar } from "../components/NavBar";
 import { Footer } from "../components/Footer";
 import { Analytics } from "@vercel/analytics/next";
+import IntroOverlay from "../components/IntroOverlay/IntroOverlay";
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
@@ -80,6 +81,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${albertSans.variable} antialiased bg-background-soft overflow-x-hidden`}
       >
+        <IntroOverlay />
         <Analytics />
         <NavBar />
         {children}

@@ -1,20 +1,21 @@
 import Image from "next/image";
 import { Facebook, Mail, Phone } from "lucide-react";
+import Link from "next/link";
 
 export const Footer = () => {
   return (
     <footer className="bg-background-soft py-1 px-6 pt-7 border-t border-border-light flex mt-[126px] flex-col gap-12">
       <div className="container flex items-center justify-between text-black/70 max-[700px]:flex-col max-[700px]:gap-6">
         {/* Left Section */}
-        <div className="flex items-center gap-3">
+        <Link href={"/"} className="flex cursor-pointer items-center gap-3">
           <Image
-            src="/masarniaLogo.png"
+            src="/masarniaLogo.svg"
             alt="Masarnia Logo"
-            width={45}
-            height={45}
+            width={70}
+            height={70}
             className="object-contain"
           />
-        </div>
+        </Link>
 
         {/* Middle Links */}
         <div className="flex gap-10 text-15 text-black/80 font-light">
@@ -23,12 +24,6 @@ export const Footer = () => {
             className="hover:text-brand-red transition font-inter text-center"
           >
             Polityka prywatności
-          </a>
-          <a
-            href="/cookies"
-            className="hover:text-brand-red font-inter transition text-center"
-          >
-            Polityka plików cookies
           </a>
         </div>
 

@@ -1,3 +1,5 @@
+import { keyframes } from "framer-motion";
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -65,6 +67,32 @@ module.exports = {
       // SHADOWS
       boxShadow: {
         card: "0 4px 18px rgba(0,0,0,0.06)",
+      },
+      keyframes: {
+        logoIn: {
+          "0%": { opacity: 0, transform: "scale(0.9)" },
+          "100%": { opacity: 1, transform: "scale(1)" },
+        },
+        logoShrink: {
+          "100%": { transform: "scale(0.6)" },
+        },
+        spinFast: {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(280deg)" },
+        },
+        spinSlow: {
+          "0%": { transform: "rotate(280deg)" },
+          "100%": { transform: "rotate(360deg)" },
+        },
+        fadeOut: {
+          "100%": { opacity: 0 },
+        },
+      },
+      animation: {
+        "logo-in":
+          "logoIn 0.6s ease-out forwards, logoShrink 0.8s ease-in 2.2s forwards",
+        "circle-sequence":
+          "spinFast 1.2s linear, spinSlow 0.6s ease-out 1.2s, fadeOut 0.6s ease-in 2.2s forwards",
       },
     },
   },

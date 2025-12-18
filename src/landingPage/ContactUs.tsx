@@ -1,5 +1,6 @@
 import { Mail, Phone, Pin } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 export const ContactUs = () => {
@@ -38,24 +39,40 @@ export const ContactUs = () => {
             </p>
           </div>
           <div className="flex flex-col gap-12">
-            <div className="flex gap-5">
-              <Phone size={24} fill="#fff" color="#fff" />
-              <p className="paragraph !text-white/80 font-light paragraph-sm paragraph-md">
+            {/* PHONE */}
+            <a
+              href="tel:+48146833990"
+              className="flex items-center gap-5 group"
+            >
+              <Phone size={24} className="text-white" />
+              <p className="paragraph paragraph-sm paragraph-md !text-white font-light group-hover:text-white transition">
                 +48 14 683 39 90
               </p>
-            </div>
-            <div className="flex gap-5">
-              <Mail size={24} color="#fff" />
-              <p className="paragraph !text-white/80 font-light paragraph-sm paragraph-md">
-                masarnia220a@gmail.com
+            </a>
+
+            {/* EMAIL */}
+            <a
+              href="mailto:masarnia220@wp.pl"
+              className="flex items-center gap-5 group"
+            >
+              <Mail size={24} className="text-white" />
+              <p className="paragraph paragraph-sm paragraph-md !text-white font-light group-hover:text-white transition">
+                masarnia220@wp.pl
               </p>
-            </div>
-            <div className="flex gap-5">
-              <Pin size={24} fill="#fff" color="#fff" />
-              <p className="paragraph !text-white/80 font-light paragraph-sm paragraph-md">
-                 Żarówka 220A, 39-312 Żarówka
+            </a>
+
+            {/* ADDRESS */}
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Żarówka+220A,+39-312+Żarówka"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-5 group"
+            >
+              <Pin size={24} className="text-white" />
+              <p className="paragraph paragraph-sm paragraph-md !text-white font-light group-hover:text-white transition">
+                Żarówka 220A, 39-312 Żarówka
               </p>
-            </div>
+            </a>
           </div>
         </div>
         <form className="flex flex-col gap-8 p-8 max-[400px]:px-2 ">
@@ -79,7 +96,6 @@ export const ContactUs = () => {
               />
             </div>
           </div>
-
           {/* Subject */}
           <div className="flex flex-col gap-1">
             <label className="text-black font-medium text-15">Temat</label>
@@ -89,7 +105,6 @@ export const ContactUs = () => {
               placeholder="Temat wiadomości"
             />
           </div>
-
           {/* Message */}
           <div className="flex flex-col gap-1">
             <label className="text-black font-medium text-15">Wiadomość</label>
@@ -99,24 +114,59 @@ export const ContactUs = () => {
               placeholder="Twoja wiadomość..."
             />
           </div>
-          <label className="flex items-center gap-2 text-15 text-black cursor-pointer select-none">
-            <input
-              type="checkbox"
-              required
-              name="privacy"
-              className="
-      appearance-none h-4 w-4 rounded border border-brand-red cursor-pointer
-      transition-all duration-200 peer
-      hover:ring-2 hover:ring-brand-red/30
-      peer-checked:bg-brand-red peer-checked:border-brand-red
-    "
-            />
-            <span className="relative peer-checked:animate-ping peer-checked:text-brand-red"></span>
-            Akceptuję politykę prywatności.
+
+          <label
+            htmlFor="privacy"
+            className="flex items-center gap-3 text-[15px] text-black select-none"
+          >
+            {/* CHECKBOX */}
+            <span className="relative flex h-4 w-4 items-center justify-center">
+              <input
+                id="privacy"
+                type="checkbox"
+                required
+                name="privacy"
+                className="
+        peer absolute h-4 w-4 appearance-none rounded
+        border border-brand-red cursor-pointer
+        transition-all duration-200
+        hover:ring-2 hover:ring-brand-red/30
+        focus-visible:ring-2 focus-visible:ring-brand-red/40
+        checked:bg-brand-red checked:border-brand-red
+      "
+              />
+
+              {/* CHECKMARK */}
+              <svg
+                className="
+        pointer-events-none absolute h-3 w-3 text-white
+        opacity-0 peer-checked:opacity-100
+        transition-opacity duration-150
+      "
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="3"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M5 13l4 4L19 7" />
+              </svg>
+            </span>
+
+            {/* TEXT + LINK */}
+            <span>
+              Akceptuję{" "}
+              <Link
+                href="/polityka-prywatnosci"
+                className="text-brand-red font-medium underline underline-offset-2 hover:opacity-80"
+              >
+                politykę prywatności
+              </Link>
+              .
+            </span>
           </label>
-
           {/* Divider */}
-
           {/* Submit Button */}
           <button className="pt-1.5 pb-1.5 pl-5 pr-5 rounded-xl text-white bg-brand-red w-fit text-16 ">
             Wyślij wiadomość
