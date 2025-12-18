@@ -5,6 +5,7 @@ import { NavBar } from "../components/NavBar";
 import { Footer } from "../components/Footer";
 import { Analytics } from "@vercel/analytics/next";
 import IntroOverlay from "../components/IntroOverlay/IntroOverlay";
+import { Toaster } from "sonner";
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
@@ -83,6 +84,14 @@ export default function RootLayout({
       >
         <IntroOverlay />
         <Analytics />
+        <Toaster
+          position="top-right"
+          toastOptions={{
+            className:
+              "!bg-brand-red !text-white border-none shadow-lg rounded-xl",
+          }}
+        />
+
         <NavBar />
         {children}
         <Footer />

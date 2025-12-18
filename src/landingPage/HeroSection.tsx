@@ -91,7 +91,7 @@ export const HeroSection = () => {
             <Button
               label="Gdzie nas znajdziesz"
               style="outline"
-              href="/produkty"
+              href="#jak-dojechac"
             />
           </motion.div>
         </motion.div>

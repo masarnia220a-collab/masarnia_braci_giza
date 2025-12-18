@@ -1,15 +1,37 @@
+"use client";
+
 import Image from "next/image";
-import Link from "next/link";
+import { motion } from "framer-motion";
+
+/* ================== MOTION VARIANTS ================== */
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 24 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
+
+const stagger = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
+/* ================== COMPONENT ================== */
 
 export const HowWeWork = () => {
   return (
     <section className="w-full bg-background-soft">
       {/* ===== OUR MISSION ===== */}
       <div className="bg-brand-red relative text-white py-20 px-6 rounded-tl-2xl rounded-tr-2xl">
-        <div
-          className="absolute top-0 left-1/2 -translate-x-1/2
-"
-        >
+        {/* TOP CURVE + TITLE */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2">
           <div className="relative">
             <svg
               width="312"
@@ -23,69 +45,108 @@ export const HowWeWork = () => {
                 fill="#FFF5E1"
               />
             </svg>
-            <h2 className="text-36 text-brand-red w-full font-bold capitalize absolute z-50 top-[-8px] left-1/2 text-center  -translate-x-1/2">
+
+            <motion.h2
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="text-36 text-brand-red w-full font-bold capitalize absolute z-50 top-[-8px] left-1/2 text-center -translate-x-1/2"
+            >
               Jak pracujemy
-            </h2>
+            </motion.h2>
           </div>
         </div>
-        <div className="max-w-[1200px] mx-auto ">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center mt-6">
+
+        {/* CONTENT */}
+        <div className="max-w-[1200px] mx-auto">
+          <motion.div
+            variants={stagger}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center mt-6"
+          >
             {[
               {
                 number: "01",
-                text: "Selekcja i Rozbiór Każdy dzień zaczynamy od surowej oceny mięsa. Przeprowadzamy ręczny rozbiór półtusz, oddzielając to, co najlepsze. Nie używamy mięsa oddzielanego mechanicznie (MOM) – u nas liczy się czysty surowiec.",
+                text: "Selekcja i Rozbiór. Każdy dzień zaczynamy od surowej oceny mięsa. Przeprowadzamy ręczny rozbiór półtusz, oddzielając to, co najlepsze. Nie używamy MOM – liczy się czysty surowiec.",
               },
               {
                 number: "02",
-                text: "Marynowanie i Przyprawianie To tutaj dzieje się magia smaku. Mięso leżakuje w autorskich solankach i jest nacierane mieszankami naturalnych ziół. Dajemy mu czas, aby przeszło aromatem – bez przyspieszaczy i nastrzykiwania",
+                text: "Marynowanie i Przyprawianie. Mięso leżakuje w autorskich solankach i jest nacierane naturalnymi ziołami. Dajemy mu czas – bez przyspieszaczy i nastrzykiwania.",
               },
               {
                 number: "03",
-                text: "Wędzenie i Parzenie Ostatni etap to kunszt wędzarniczy. Używamy tradycyjnych komór i naturalnego dymu z drewna liściastego. Pilnujemy temperatury i czasu, by wędliny nabrały idealnego koloru i kruchości, które zobaczysz na zdjęciach poniżej.",
+                text: "Wędzenie i Parzenie. Tradycyjne komory, naturalny dym z drewna liściastego i pełna kontrola temperatury – dla koloru, aromatu i kruchości.",
               },
             ].map((item) => (
-              <div className="flex flex-col items-center" key={item.number}>
+              <motion.div
+                key={item.number}
+                variants={fadeUp}
+                className="flex flex-col items-center"
+              >
                 <p className="text-4xl font-semibold mb-4">{item.number}</p>
-                <p className="text-15 font-light text-white/80 font-inter max-w-[300px] ">
+                <p className="text-15 font-light text-white/80 font-inter max-w-[300px]">
                   {item.text}
                 </p>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
 
       {/* ===== IMAGE CTA GRID ===== */}
-      <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 rounded-br-2xl">
-        {/* LEFT */}
-        <div className="relative h-[420px]">
+      <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 rounded-br-2xl overflow-hidden">
+        {/* LEFT IMAGE */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.96 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="relative h-[420px]"
+        >
           <Image
-            src="/produkcja_1.png" // ← podmień
-            alt="Workshops"
+            src="/produkcja_1.png"
+            alt="Ręczna produkcja"
             fill
-            className="object-cover object-top "
+            className="object-cover object-top"
           />
-          <div className="absolute inset-0 bg-black/30 flex flex-col items-center justify-center text-white">
-            <h3 className="text-2xl font-semibold mb-4 tracking-wide">
+          <motion.div
+            whileHover={{ scale: 1.02 }}
+            transition={{ type: "spring", stiffness: 200, damping: 20 }}
+            className="absolute inset-0 bg-black/30 flex items-center justify-center text-white"
+          >
+            <h3 className="text-2xl font-semibold tracking-wide">
               RĘCZNA PRODUKCJA
             </h3>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
-        {/* RIGHT */}
-        <div className="relative h-[420px] rounded-br-2xl">
+        {/* RIGHT IMAGE */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.96 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+          className="relative h-[420px] rounded-br-2xl"
+        >
           <Image
-            src="/produkcja_2.png" // ← podmień
-            alt="Online store "
+            src="/produkcja_2.png"
+            alt="Tradycyjne wyroby"
             fill
             className="object-cover object-top rounded-br-2xl"
           />
-          <div className="absolute inset-0 bg-black/30 flex flex-col items-center justify-center text-white">
-            <h3 className="text-2xl font-semibold mb-4 tracking-wide">
+          <motion.div
+            whileHover={{ scale: 1.02 }}
+            transition={{ type: "spring", stiffness: 200, damping: 20 }}
+            className="absolute inset-0 bg-black/30 flex items-center justify-center text-white"
+          >
+            <h3 className="text-2xl font-semibold tracking-wide">
               TRADYCYJNE WYROBY
             </h3>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

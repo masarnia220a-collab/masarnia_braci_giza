@@ -3,6 +3,7 @@ import { AboutUs } from "../landingPage/AboutUs";
 import { ContactUs } from "../landingPage/ContactUs";
 import Gallery from "../landingPage/Gallery";
 import { HeroSection } from "../landingPage/HeroSection";
+import { HowToFindUs } from "../landingPage/HowToFindUs";
 import { HowWeWork } from "../landingPage/HowWeWork";
 import { Reviews } from "../landingPage/Reviews";
 import { SocialProve } from "../landingPage/SocialProve";
@@ -19,6 +20,7 @@ export default function Home() {
       <WhyUs />
       <Gallery />
       {/* <Reviews /> */}
+      <HowToFindUs />
       <ContactUs />
     </main>
   );

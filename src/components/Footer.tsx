@@ -39,7 +39,7 @@ export const Footer = () => {
               <Facebook size={18} color="#fff" />
             </a>
             <a
-              href="mailto:masarnia220a@gmail.com"
+              href="mailto:masarnia220@wp.pl"
               className="bg-brand-red rounded-full p-2 hover:bg-brand-red-dark transition"
             >
               <Mail size={18} color="#fff" />

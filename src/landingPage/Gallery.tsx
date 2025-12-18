@@ -124,7 +124,7 @@ const Gallery = () => {
               <span className="font-bold text-brand-red">Tradycja</span> która
               ma głęboki sens
             </h2>
-            <p className="paragraph paragraph-md paragraph-sm mt-2 max-w-1/2 self-center">
+            <p className="paragraph paragraph-md paragraph-sm mt-2 max-w-1/2 max-[820px]:max-w-full self-center">
               Wszystko zaczęło się od marzenia o prawdziwym smaku. To tutaj
               doświadczenie rzeźnickie spotyka się z pasją do natury.
             </p>

@@ -40,7 +40,14 @@ export const NavBar = () => {
           transition={{ duration: 0.5 }}
           className="z-50"
         >
-          <Image src={"/masarniaLogo.svg"} height={75} width={75} alt="Logo" />
+          <Link href={"/"}>
+            <Image
+              src={"/masarniaLogo.svg"}
+              height={75}
+              width={75}
+              alt="Logo"
+            />
+          </Link>
         </motion.div>
 
         {/* DESKTOP MENU */}
